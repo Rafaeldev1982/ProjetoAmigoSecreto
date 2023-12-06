@@ -9,3 +9,10 @@ export const getAll = async () => {
         return false
     }
 }
+
+export const getOne = async (id: number) => {
+    try {
+        return await prisma.event.findFirst({ where: { id } });
+    } catch (err) { return false }
+
+}
