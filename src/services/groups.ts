@@ -8,3 +8,11 @@ export const getAll = async (id_event: number) => {
     } catch (err) { return false }
 }
 
+type GetOneFilters = { id: number; id_event?: number; }
+export const GetOne = async (filters: GetOneFilters) => {
+    try {
+
+        return await prisma.eventGroup.findFirst({ where: filters })
+
+    } catch (err) { return false }
+}
