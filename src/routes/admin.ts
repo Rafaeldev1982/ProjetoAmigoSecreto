@@ -11,13 +11,14 @@ router.get('/ping', auth.validate, (req, res) => res.json({ pong: true, admin: t
 router.get('/events', auth.validate, events.getAll);
 router.get('/events/:id', auth.validate, events.getEvent);
 router.post('/envents', auth.validate, events.addEvent);
-router.delete('/events/:id', auth.validate, events.deleteEvent)
 router.put('/events/:id', auth.validate, events.updateEvent);
-
+router.delete('/events/:id', auth.validate, events.deleteEvent)
 
 router.get('/events/:id_event/groups', auth.validate, groups.getAll)
 router.get('/events/:id_event/groups/:id', auth.validate, groups.getGroup)
 router.post('/events/:id_event/groups', auth.validate, groups.addGroup);
 router.put('/events/:id_event/groups/:id', auth.validate, groups.updateGroup);
+router.delete('/events/:id_event/groups/:id', auth.validate, groups.deleteGroup);
+
 
 export default router;
