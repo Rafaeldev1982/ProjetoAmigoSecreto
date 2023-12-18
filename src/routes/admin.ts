@@ -18,6 +18,6 @@ router.put('/events/:id', auth.validate, events.updateEvent);
 router.get('/events/:id_event/groups', auth.validate, groups.getAll)
 router.get('/events/:id_event/groups/:id', auth.validate, groups.getGroup)
 router.post('/events/:id_event/groups', auth.validate, groups.addGroup);
-
+router.put('/events/:id_event/groups/:id', auth.validate, groups.updateGroup);
 
 export default router;
